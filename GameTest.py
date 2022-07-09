@@ -34,6 +34,7 @@ while True:
             sys.exit(0)
         elif event.type == pygame.KEYDOWN and event.key ==pygame.K_ESCAPE:
             sys.exit(0)
+    print(pygame.mouse.get_pos())
     screen.fill((0,0,0))
 #Ticking
     delta+=clock.tick()/1000.0
