@@ -6,6 +6,7 @@ screen=pygame.display.set_mode((1000,1000))
 ball= pygame.Rect(475,50,50,50)
 delta=0.0
 clock = pygame.time.Clock()
+
 while True:
     screen.fill((0,0,0))
 #Ticking
@@ -26,7 +27,7 @@ while True:
     while delta<1/60.0:
         
         if not(pygame.mouse.get_pressed() and pos[0]>ball.x-25 and pos[0]<ball.x+25 and pos[1]>ball.y-25 and pos[1]<ball.y+25) and ball.y<950:
-            ball.y-=1
+            ball.y+=1
         pygame.draw.rect(screen,(0,155,155),ball)
         pygame.display.flip()
         delta-=1/60.0
