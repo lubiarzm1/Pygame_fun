@@ -1,6 +1,6 @@
 import pygame
 import sys
-from obj import obj
+from class_obj import obj
 
 pygame.init()
 screen=pygame.display.set_mode((1000,1000))
