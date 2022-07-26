@@ -11,13 +11,14 @@ clock = pygame.time.Clock()
 
 
 class obj():
-    ball=pygame.Rect(475,50,50,50)
-    lock_y = False
-    t=0.0
-    v=0.0
-    g=10
-    last_pos=0
-    sigma=0.75
+    def __init__(self):
+        self.ball=pygame.Rect(475,50,50,50)
+        self.lock_y = False
+        self.t=0.0
+        self.v=0.0
+        self.g=10
+        self.last_pos=0
+        self.sigma=1
     ## Calculating position iside
     def Is_inside(self,pos):
         return(pos[0]>self.ball.x and pos[0]<self.ball.x+50 and pos[1]>self.ball.y and pos[1]<self.ball.y+50)
