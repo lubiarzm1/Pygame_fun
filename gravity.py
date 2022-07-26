@@ -4,11 +4,12 @@ import sys
 pygame.init()
 screen=pygame.display.set_mode((1000,1000))
 delta=0.0
-FPS=240.0
+FPS=500.0
 clock = pygame.time.Clock()
-
+count=500
 
 class obj():
+    ## Init
     def __init__(self):
         self.ball=pygame.Rect(475,50,50,50)
         self.lock_y = False
@@ -28,7 +29,7 @@ class obj():
         self.sigma=-sigma
     ##Initialaizing obj
     def Set_ball(self,x):
-        self.ball=pygame.Rect(x,50,50,50)
+        self.ball=pygame.Rect(x,2,2,2)
     ##Phisic of ball
     def Update(self):
         self.t+=1/FPS
@@ -39,6 +40,7 @@ class obj():
             self.lock_y = True
         elif self.ball.y < 950 and self.lock_y == True:
             self.lock_y = False
+            self.t=0.0
         else:
             self.v=self.v+self.g*self.t
             self.ball.y=self.last_pos+self.v*self.t
@@ -50,11 +52,12 @@ class obj():
             self.last_pos=self.ball.y
             self.t=0.0
 #Initialize object
-
-obj1=[obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj(),obj()]
+obj1=[obj()]
+for i in range(count):
+    obj1.append(obj())
 for i in range(len(obj1)):
-    obj1[i].Set_param(9.81,i*50,0,0.9)
-    obj1[i].Set_ball(50+i*50)
+    obj1[i].Set_param(1,i*1.5,0,0.92)
+    obj1[i].Set_ball(i*2)
 while True:   
 #Ticking
     pos=list(pygame.mouse.get_pos())
