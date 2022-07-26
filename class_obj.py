@@ -1,6 +1,6 @@
 import pygame
 import sys
-FPS=500.0
+FPS=60.0
 pygame.init()
 pos=list(pygame.mouse.get_pos())
 class obj():
@@ -24,16 +24,16 @@ class obj():
         self.sigma=-sigma
     ##Initialaizing obj
     def Set_ball(self,x):
-        self.ball=pygame.Rect(x,2,2,2)
+        self.ball=pygame.Rect(x,50,50,50)
     ##Phisic of ball
     def Update(self):
         self.t+=1/FPS
-        if self.ball.y > 950 and self.lock_y == False:
+        if self.ball.y > 550 and self.lock_y == False:
             self.t=0.0
             self.v= self.sigma*self.v
-            self.last_pos=950
+            self.last_pos=550
             self.lock_y = True
-        elif self.ball.y < 950 and self.lock_y == True:
+        elif self.ball.y < 550 and self.lock_y == True:
             self.lock_y = False
             self.t=0.0
         else:

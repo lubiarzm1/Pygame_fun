@@ -1,21 +1,21 @@
 import pygame
 import sys
 from class_obj import obj
-
+from class_obj import FPS
 pygame.init()
-screen=pygame.display.set_mode((1000,1000))
+screen=pygame.display.set_mode((600,600))
 delta=0.0
-FPS=500.0
+
 clock = pygame.time.Clock()
-count=500
+count=10
 
 #Initialize object
 obj1=[obj()]
 for i in range(count):
     obj1.append(obj())
 for i in range(len(obj1)):
-    obj1[i].Set_param(1,i*1.5,0,0.85)
-    obj1[i].Set_ball(i*2)      
+    obj1[i].Set_param(10,i*50,0,0.85)
+    obj1[i].Set_ball(50+i*50)      
 ##MAIN    
 while True:   
 #Ticking
