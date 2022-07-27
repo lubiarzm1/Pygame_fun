@@ -1,6 +1,6 @@
 import pygame
 import sys
-FPS=500.0
+FPS=60.0
 pygame.init()
 pos=list(pygame.mouse.get_pos())
 class obj():
@@ -24,7 +24,7 @@ class obj():
         self.sigma=-sigma
     ##Initialaizing obj
     def Set_ball(self,x):
-        self.ball=pygame.Rect(x,2,2,2)
+        self.ball=pygame.Rect(x,10,10,10)
     ##Phisic of ball
     def Update(self):
         self.t+=1/FPS
