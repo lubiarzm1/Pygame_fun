@@ -5,27 +5,16 @@ from class_obj import FPS
 pygame.init()
 screen=pygame.display.set_mode((600,600))
 delta=0.0
-<<<<<<< HEAD
-clock = pygame.time.Clock()
-count=15
-=======
-
 clock = pygame.time.Clock()
 count=10
->>>>>>> e95375bfca770c42fde708535d0a320ef46e98e2
 
 #Initialize object
 obj1=[obj()]
 for i in range(count):
     obj1.append(obj())
 for i in range(len(obj1)):
-<<<<<<< HEAD
-    obj1[i].Set_param(10,i*50,0,0.065*i)
-    obj1[i].Set_ball(i*50)      
-=======
-    obj1[i].Set_param(10,i*50,0,0.85)
+    obj1[i].Set_param(10,i*10,0,0.075*i)
     obj1[i].Set_ball(50+i*50)      
->>>>>>> e95375bfca770c42fde708535d0a320ef46e98e2
 ##MAIN    
 while True:   
 #Ticking

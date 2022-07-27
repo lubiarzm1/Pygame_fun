@@ -24,11 +24,7 @@ class obj():
         self.sigma=-sigma
     ##Initialaizing obj
     def Set_ball(self,x):
-<<<<<<< HEAD
-        self.ball=pygame.Rect(x,10,10,10)
-=======
         self.ball=pygame.Rect(x,50,50,50)
->>>>>>> e95375bfca770c42fde708535d0a320ef46e98e2
     ##Phisic of ball
     def Update(self):
         self.t+=1/FPS
