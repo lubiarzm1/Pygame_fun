@@ -24,16 +24,20 @@ class obj():
         self.sigma=-sigma
     ##Initialaizing obj
     def Set_ball(self,x):
+<<<<<<< HEAD
         self.ball=pygame.Rect(x,10,10,10)
+=======
+        self.ball=pygame.Rect(x,50,50,50)
+>>>>>>> e95375bfca770c42fde708535d0a320ef46e98e2
     ##Phisic of ball
     def Update(self):
         self.t+=1/FPS
-        if self.ball.y > 950 and self.lock_y == False:
+        if self.ball.y > 550 and self.lock_y == False:
             self.t=0.0
             self.v= self.sigma*self.v
-            self.last_pos=950
+            self.last_pos=550
             self.lock_y = True
-        elif self.ball.y < 950 and self.lock_y == True:
+        elif self.ball.y < 550 and self.lock_y == True:
             self.lock_y = False
             self.t=0.0
         else:
